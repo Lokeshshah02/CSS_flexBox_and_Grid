@@ -1,0 +1,123 @@
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background: linear-gradient(to bottom right, darkgrey, darkolivegreen);
+  transition: background-color 0.5s;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2f 1.5fr 1fr 1fr 0.8fr;
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "sidebar main main main"
+    "sidebar section1 section2 section3"
+    "sidebar section4 section4 section4"
+    "footer footer footer footer";
+  gap: 20px;
+  height: 100%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+nav, main, #sidebar, #section1, #section2, #section3, #section4, footer{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+nav:hover, main:hover, #sidebar:hover, #section1:hover, #section2:hover, #section3:hover, #section4:hover, footer:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transform: scale(1.02);
+}
+
+nav{
+    grid-area: navbar;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: #ccc;
+}
+main{
+    grid-area: main;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bolder;
+    background-color: #ecf0f1;
+
+}
+#sidebar{
+    grid-area: sidebar;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bolder;
+    background-color: #3498db;
+}
+
+#section1{
+    grid-area: section1;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bolder;
+    background-color: #e74;
+}
+#section2{
+    grid-area: section2;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bolder;
+    background-color: #9b59b6;
+}
+#section3{
+    grid-area: section3;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bolder;
+    background-color: #f39c23;
+}
+#section4{
+    grid-area: section4;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bolder;
+    background-color: #555;
+}
+
+footer{
+    grid-area: footer;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: #ccc;
+}
+
+@media(max-width: 768px){
+    .page{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "navbar"
+        "main"
+        "sidebar"
+        "section1"
+        "section2"
+        "section3"
+        "section4"
+        "footer";
+
+    }
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 2;
+    }
+
+}
